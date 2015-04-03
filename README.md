@@ -1,6 +1,8 @@
 Backup Firebase data to AWS S3
 ==============================
 
+Forked from Sean Meadows awesome script.
+
 Detailed blog post here: http://www.seanmeadows.com/2014/03/firebase-continuous-backup/
 
 Using python, you can automatically (with cron or heroku scheduler) backup all
@@ -19,6 +21,44 @@ Install
 Run
 ---
 
-Set the necessary environment variables. Then run:
+Import App's config variables:
+
+    heroku config:pull --overwrite
+
+Then run:
 
     python backup-firebase.py
+
+
+ENV
+---
+
+The repo managers multiple Heroku Apps.
+
+To define the active Heroku app:
+
+    git config heroku.remote <app_name>
+
+To import App's config variables:
+
+    heroku config:pull --overwrite
+
+To export config variables in .env file to App:
+
+    heroku config:push
+
+Get current config env:
+
+    git config --list
+
+New Apps
+--------
+
+To add new apps, create them on Heroku and add new git remote.
+
+    git remote add <app_name> <heroku_git_repo>
+
+To deploy:
+
+    git push <app_name> master
+
