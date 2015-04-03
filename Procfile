@@ -1,1 +1,1 @@
-web: gunicorn gettingstarted.wsgi --log-file -
+weeknder: python tasks/weeknder.py
