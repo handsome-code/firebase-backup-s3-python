@@ -1,2 +1,1 @@
-weeknder: python tasks/weeknder.py
-pointingoutway: python tasks/pointingoutway.py
+backup: python backup-firebase.py
